@@ -83,9 +83,13 @@ body {
   }
   
   
-  .D {
+  .h {
+  
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
     display: grid;
-    grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 0.4fr 1fr 1fr 1fr 1fr 1fr 0.6fr 1fr 1fr 1fr 1fr;
    
   }
 
@@ -97,6 +101,10 @@ body {
     margin-left:15%;
     width: 70%;
 
+  }
+
+  .c{
+    text-align:center;
   }
   
 
