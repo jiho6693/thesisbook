@@ -1,0 +1,178 @@
+
+
+/* 안개 */
+  .blur1 {
+    filter: blur(2.5px);
+    transition: filter 0.3s ease-in-out;
+  }
+
+  .blur {
+    filter: blur(1.5px);
+  }
+
+
+  /* 비오는거 */
+  
+  #rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+  }
+
+  #rain .drop {
+    position: absolute;
+    width: 5px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: rainAnimation 2s linear infinite;
+  }
+
+  @keyframes rainAnimation {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(200vh);
+      opacity: 1;
+    }
+  }
+
+
+body {
+
+
+    /* filter: blur(1.5px); */
+    margin: 40px;
+    font: 80% Arial, Helvetica, sans-serif;
+    
+
+
+    
+  }
+  
+  
+
+  .wrapper {
+    display: grid;
+    /* background: no-repeat url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/12005/grid.png); */
+    grid-gap: 10px;
+    grid-template-columns:  repeat(8, 150px);
+    grid-template-rows: repeat( 4, 150px);
+    color: #444;
+    
+  }
+  
+  .box {
+    border: 1px solid #444;
+    padding: 20px;
+    font-size: 150%;
+    position: relative;
+  }
+  
+  
+  .a {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+    align-self: stretch;
+  }
+  
+  .b {
+    grid-column: 3 / 5;
+    grid-row: 1 / 3;
+    align-self: end;
+  }
+  
+  .c {
+    grid-column: 1 / 3;
+    grid-row: 3 /  6;
+    align-self: start;
+  }
+  
+  .d {
+    grid-column: 3 / 5;
+    grid-row: 3 / 6;
+    align-self: center;
+  }
+  
+  .e {
+    grid-column: 5 / 7;
+    grid-row: 1 / 6;
+    align-self: stretch;
+  }
+
+  .f {
+    grid-column: 7 / 9;
+    grid-row: 2 /6;
+    align-self: stretch;
+
+  }
+
+  .g {
+    grid-column:10/ 11;
+    grid-row: 5 /6;
+    
+  }
+
+  .h  {
+    grid-column:10/ 11;
+    grid-row: 1/3;
+    
+  }
+
+  .d a:link{
+    text-decoration: none !important;
+    color: #444;
+  }
+
+  .d a:hover{
+    color:rgb(3, 250, 56);
+  }
+
+  
+  
+  #myElement:hover {
+    color:  rgb(3, 250, 56);
+  }
+
+  #myElement0:hover {
+    color:  rgb(3, 250, 56);
+  }
+
+  #myElement01:hover {
+    color:  rgb(3, 250, 56);
+  }
+
+  #myElement1:hover {
+    color:  rgb(3, 250, 56);
+  }
+
+  #myElement2:hover {
+    color:  rgb(3, 250, 56);
+  }
+
+  #myElement3:hover {
+    color:  rgb(3, 250, 56);
+  }
+
+  #myElement4:hover {
+    color:  rgb(3, 250, 56);
+  }
+
+  #myElement5:hover {
+    color:  rgb(3, 250, 56);
+  }
+
+  #myElement6:hover {
+    color:  rgb(3, 250, 56);
+  }
+
+  .clock-container {
+    display: flex;
+  
+  }
