@@ -53,16 +53,15 @@ body {
     /* filter: blur(1.5px); */
     margin: 40px;
     font: 80% Arial, Helvetica, sans-serif;
+    text-decoration: inherit;
     
 
 
     
   }
   
-  .header{
-   
-    white-space: nowrap;
-  }
+  
+ 
 
   .index {
     white-space: pre-line;
@@ -84,10 +83,20 @@ body {
   }
   
   
-  .d{
-    display: g
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  .D {
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
    
+  }
+
+  .content{
+    white-space: pre-line;
+  }
+
+  .content img{
+    margin-left:15%;
+    width: 70%;
+
   }
   
 
@@ -117,14 +126,16 @@ body {
     
   }
 
-  .d a:link{
+  a:link, a:visited{
     text-decoration: none !important;
     color: #444;
   }
 
-  .d a:hover{
+  a:hover{
     color:rgb(3, 250, 56);
   }
+
+
 
   
   
