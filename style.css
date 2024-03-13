@@ -47,11 +47,11 @@
 
 body {
 
-  grid-gap: 5px;
+
   display: grid;
 
     /* filter: blur(1.5px); */
-    margin: 40px;
+    margin: 25px;
     font: 80% Arial, Helvetica, sans-serif;
     text-decoration: inherit;
     
@@ -64,36 +64,41 @@ body {
  
 
   .index {
-    white-space: pre-line;
+
     display: grid;
+    padding-bottom: 0px;
     /* background: no-repeat url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/12005/grid.png); */
     grid-gap: 5px;
-    grid-template-columns: 2fr 9fr 1fr;
+    grid-template-columns: 3fr 8fr 1fr;
     /* grid-template-columns:  repeat(8, 150px);
     grid-template-rows: repeat( 4, 150px); */
-    color: #444;
+
     
   }
   
   .box {
+    
     border: 1px solid #444;
     padding: 15px;
     font-size: 150%;
     position: relative;
+    margin-bottom: 10px;
   }
   
   
   .h {
   
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     padding-right: 0px;
     display: grid;
-    grid-template-columns: 1fr 0.4fr 1fr 1fr 1fr 1fr 1fr 0.6fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
    
   }
 
-  .content{
+
+
+  .content p{
     white-space: pre-line;
   }
 
@@ -136,7 +141,7 @@ body {
 
   a:link, a:visited{
     text-decoration: none !important;
-    color: #444;
+    color: inherit;
   }
 
   a:hover{
@@ -147,27 +152,27 @@ body {
 
   
   
-  #myElement:hover {
+  #night:hover {
     color:  rgb(3, 250, 56);
   }
 
-  #myElement0:hover {
+  #dawn:hover {
     color:  rgb(3, 250, 56);
   }
 
-  #myElement01:hover {
+  #sunrise:hover {
     color:  rgb(3, 250, 56);
   }
 
-  #myElement1:hover {
+  #day:hover {
     color:  rgb(3, 250, 56);
   }
 
-  #myElement2:hover {
+  #sunset:hover {
     color:  rgb(3, 250, 56);
   }
 
-  #myElement3:hover {
+  #dusk:hover {
     color:  rgb(3, 250, 56);
   }
 
