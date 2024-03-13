@@ -5,8 +5,22 @@ let lon = "-71.418884";
 const url = 'https://api.openweathermap.org/data/2.5/weather?lat='+ lat + '&lon=' + lon +'&units=imperial&appid='+ apiKey +'';
 
 
+// //reset
+// document.addEventListener("DOMContentLoaded", function() {
+//   var myElement = document.getElementById("myElement0");
+//   myElement.addEventListener("click", function() {
+//     location.reload(); // 페이지 새로고침
+//   });
+// });
 
+// document.addEventListener("DOMContentLoaded", function() {
+//   var myElement = document.getElementById("myElement01");
+//   myElement.addEventListener("click", function() {
+//     location.reload(); // 페이지 새로고침
+//   });
+// });
 
+//rainy effect
 function createRain(){
     var rainContainer = document.createElement("div");
     rainContainer.id = "rain";
@@ -20,38 +34,17 @@ function createRain(){
 
     document.body.appendChild(rainContainer);
 
-    setTimeout(function() {
-        rainContainer.remove();
-      }, 6000);
-
       document.body.classList.add('blur1');
-      setTimeout(function() {
-        document.body.classList.remove('blur1');
-      }, 6000);
-
+     
     }
+
+//cloudy effect
 
 function createClouds(){
     document.body.classList.add('blur');
-      setTimeout(function() {
-        document.body.classList.remove('blur');
-      }, 6000);
+      
 }
 
-//reset
-document.addEventListener("DOMContentLoaded", function() {
-    var myElement = document.getElementById("myElement0");
-    myElement.addEventListener("click", function() {
-      location.reload(); // 페이지 새로고침
-    });
-  });
-
-  document.addEventListener("DOMContentLoaded", function() {
-    var myElement = document.getElementById("myElement01");
-    myElement.addEventListener("click", function() {
-      location.reload(); // 페이지 새로고침
-    });
-  });
 
 
   // Night
@@ -59,15 +52,13 @@ function changeBackgroundColor() {
   document.body.style.backgroundColor = "black";
   document.body.style.color = "gray";
 
-  setTimeout(function() {
-      document.body.style.backgroundColor = ''; // 이전에 설정된 색상으로 돌아갑니다.
-  }, 5000); 
 }
 
 document.addEventListener("DOMContentLoaded", function() {
   var myElement = document.getElementById("night");
   myElement.addEventListener("click", changeBackgroundColor);
 });
+
 
 // Dawn
 function changeBackgroundColor1() {
@@ -77,10 +68,6 @@ function changeBackgroundColor1() {
   document.body.style.backgroundColor = color;
   document.body.style.color = "gray";
 
-  setTimeout(function() {
-      document.body.style.backgroundColor = '';
-      document.body.style.color =''; // 이전에 설정된 색상으로 돌아갑니다.
-  }, 5000);
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -93,6 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
   myElement.addEventListener("click", changeBackgroundColor1);
 });
 
+
 // Sunrise
 function changeBackgroundColor2() {
   var redness = 10; // 빨간 색감을 계산합니다.
@@ -100,11 +88,7 @@ function changeBackgroundColor2() {
   document.body.style.backgroundColor = color;
   document.body.style.color = "purple";
 
-  // 5초 후에 원래 색상으로 변경합니다.
-  setTimeout(function() {
-    document.body.style.backgroundColor = '';
-    document.body.style.color =''; // 이전에 설정된 색상으로 돌아갑니다.
-  }, 5000); // 5초(5000 밀리초) 후에 실행됩니다.
+
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -125,10 +109,10 @@ function changeBackgroundColor3() {
   document.body.style.backgroundColor = color;
 
   // 5초 후에 원래 색상으로 변경합니다.
-  setTimeout(function() {
-    document.body.style.backgroundColor = '';
-    document.body.style.color =''; // 이전에 설정된 색상으로 돌아갑니다.
-  }, 5000); // 5초(5000 밀리초) 후에 실행됩니다.
+  // setTimeout(function() {
+  //   document.body.style.backgroundColor = '';
+  //   document.body.style.color =''; // 이전에 설정된 색상으로 돌아갑니다.
+  // }, 5000); // 5초(5000 밀리초) 후에 실행됩니다.
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -137,24 +121,73 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+// sunny
+document.addEventListener("DOMContentLoaded", function() {
+  var myElement = document.getElementById("sunny");
+
+  myElement.addEventListener("click", clickHandler);
+
+  function clickHandler() {
+    var element = document.getElementById("sunny");
+    element.style.color = "rgb(3, 250, 56)";
+    var rainContainer = document.getElementById("rain"); // 비 효과를 삭제하기
+    if (rainContainer) {
+      rainContainer.remove(); // 비 효과를 없애기
+      document.body.classList.remove('blur1'); // blur1 클래스 제거
+    }
+
+    // 3초 후에 클릭 이벤트 제거
+    setTimeout(function() {
+      myElement.removeEventListener("click", clickHandler);
+    }, 3000);
+  }
+});
 
 
+//  Rainy
+document.addEventListener("DOMContentLoaded", function() {
+  var myElement = document.getElementById("rainy");
 
-//   //노을 비 
-//   document.addEventListener("DOMContentLoaded", function() {
-//     var myElement = document.getElementById("myElement2");
-//     myElement.addEventListener("click", changeBackgroundColor1);
-//     myElement.addEventListener("click", createRain);
+  myElement.addEventListener("click", function() {
+    createRain();
+    var element = document.getElementById("rainy");
+    element.style.color = "rgb(3, 250, 56)";
 
-// });
+    // 3초 후에 비 효과를 없애기
+    setTimeout(function() {
+      element.style.color = ''; // 색상을 원래대로 변경
+      var rainContainer = document.getElementById("rain"); // 비 효과를 삭제하기
+      rainContainer.remove(); // 비 효과를 없애기
+      document.body.classList.remove('blur1'); // blur1 클래스 제거
+    }, 3000);
+  });
+});
 
-// //day- clear
-// function changeBackgroundColor2() {
+//  cloudy
+
+document.addEventListener("DOMContentLoaded", function() {
+  var myElement = document.getElementById("cloudy");
+
+  myElement.addEventListener("click", function() {
+    createClouds();
+    var element = document.getElementById("cloudy");
+    element.style.color = "rgb(3, 250, 56)";
+
+    // 3초 후에 색상 변경 및 흐린 효과 제거
+    setTimeout(function() {
+      element.style.color = ''; // 색상을 원래대로 변경
+      document.body.classList.remove('blur'); // blur 클래스 제거
+    }, 3000);
+  });
+});
+
+//day- clear
+// function changeBackgroundColor3() {
 //     document.body.style.backgroundColor = "White";
 //   }
 //   document.addEventListener("DOMContentLoaded", function() {
-//     var myElement = document.getElementById("myElement3");
-//     myElement.addEventListener("click", changeBackgroundColor2);
+//     var myElement = document.getElementById("sunny");
+//     myElement.addEventListener("click", changeBackgroundColor3);
 //   });
 
 // //day - Rainy
@@ -170,17 +203,10 @@ document.addEventListener("DOMContentLoaded", function() {
 // function changeBackgroundColor3() {
 //     document.body.style.backgroundColor = "rgb(69, 107, 221)";
 //   }
-//   document.addEventListener("DOMContentLoaded", function() {
-//     var myElement = document.getElementById("myElement5");
-//     myElement.addEventListener("click", changeBackgroundColor3);
-//     myElement.addEventListener("click", createClouds);
-//   });
-// //dawn - Rainy
-//   document.addEventListener("DOMContentLoaded", function() {
-//     var myElement = document.getElementById("myElement6");
-//     myElement.addEventListener("click", changeBackgroundColor3);
-//     myElement.addEventListener("click", createRain);
-//   });
+  document.addEventListener("DOMContentLoaded", function() {
+    var myElement = document.getElementById("cloudy");
+    myElement.addEventListener("click", createClouds);
+  });
 
 
 
@@ -195,14 +221,14 @@ document.addEventListener("DOMContentLoaded", function() {
   changeBackgroundColor();
 
   // 5분마다 배경색 변경 함수를 호출하기 위한 setInterval 설정
-  setInterval(changeBackgroundColor, 15000); // 5분(300초)마다 배경색이 변경되도록 설정
+  setInterval(changeBackgroundColor, 5000); // 5분(300초)마다 배경색이 변경되도록 설정
 
   function changeBackgroundColor() {
       var now = new Date();
-      // var hours = now.getHours();
-      // var minutes = now.getMinutes();
-       var hours = 8;
-      var minutes = 1;
+      var hours = now.getHours();
+      var minutes = now.getMinutes();
+      //  var hours = 8;
+      // var minutes = 1;
 
       // 배경색 조건에 따라 처리
       if (hours >= 20 || hours < 5) {
