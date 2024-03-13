@@ -47,7 +47,7 @@
 
 body {
 
-  grid-gap: 10px;
+  grid-gap: 5px;
   display: grid;
 
     /* filter: blur(1.5px); */
@@ -67,7 +67,7 @@ body {
     white-space: pre-line;
     display: grid;
     /* background: no-repeat url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/12005/grid.png); */
-    grid-gap: 10px;
+    grid-gap: 5px;
     grid-template-columns: 2fr 9fr 1fr;
     /* grid-template-columns:  repeat(8, 150px);
     grid-template-rows: repeat( 4, 150px); */
@@ -77,7 +77,7 @@ body {
   
   .box {
     border: 1px solid #444;
-    padding: 20px;
+    padding: 15px;
     font-size: 150%;
     position: relative;
   }
