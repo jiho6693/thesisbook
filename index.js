@@ -279,7 +279,7 @@ document.addEventListener("DOMContentLoaded", function() {
       var now = new Date();
       var hours = now.getHours();
       var minutes = now.getMinutes();
-      //  var hours = 8;
+      //  var hours = 18;
       // var minutes = 1;
 
       // 배경색 조건에 따라 처리
