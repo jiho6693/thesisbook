@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Snowfall Effect</title>
+<style>
+  body {
+    overflow: hidden;
+    margin: 0;
+    background-color: #000;
+    color:#fff
+  }
+  .snowflake {
+    position: absolute;
+    background: #fff;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: falling linear infinite;
+    filter: blur(0); /* 초기 흐림 정도 */
+  }
+
+  @keyframes falling {
+    0% {
+      transform: translateY(-10%);
+      filter: blur(0); /* 시작 지점의 흐림 정도 */
+    }
+    100% {
+      transform: translateY(100vh);
+      filter: blur(10px); /* 끝 지점의 흐림 정도 */
+    }
+  }
+</style>
+</head>
+<body>
+    <div id="snowy"> Snowy</div>
+<script>
+  let snowInterval;
+
+  function createSnowflake() {
+    const snowflake = document.createElement("div");
+    snowflake.classList.add("snowflake"); // 클래스 추가
+    snowflake.style.left = Math.random() * window.innerWidth + "px";
+    snowflake.style.animationDuration = Math.random() * 3 + 2 + "s"; // Randomize animation duration
+    snowflake.style.opacity = Math.random(); // Randomize opacity
+    document.body.appendChild(snowflake);
+    setTimeout(() => {
+      snowflake.remove();
+    }, 10000); // Remove snowflake after 10 seconds
+  }
+
+  function snowfall() {
+    snowInterval = setInterval(createSnowflake, 100); // Create a snowflake every 100 milliseconds
+  }
+
+  function stopSnowfall() {
+    clearInterval(snowInterval); // Stop snowfall
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    var myElement = document.getElementById("snowy");
+
+    myElement.addEventListener("click", function() {
+        var element = document.getElementById("snowy");
+        element.style.color = "rgb(3, 250, 56)";
+        snowfall(); // 눈 내리도록 호출
+
+        // 3초 후에 눈 내림 효과를 없애기
+        setTimeout(function() {
+            element.style.color = ''; // 텍스트 색상을 원래대로 변경
+            var snowflakes = document.querySelectorAll(".snowflake"); // 모든 눈 효과 선택
+            snowflakes.forEach(function(snowflake) {
+                snowflake.remove(); // 모든 눈 효과 삭제
+            });
+            stopSnowfall(); // 눈효과 중지
+        }, 3000);
+    });
+});
+
+
+</script>
+</body>
+</html>

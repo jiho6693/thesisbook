@@ -37,6 +37,33 @@ function createRain(){
       document.body.classList.add('blur1');
      
     }
+//snowy
+
+let snowInterval;
+
+  function createSnowflake() {
+    const snowflake = document.createElement("div");
+    snowflake.classList.add("snowflake"); // 클래스 추가
+    snowflake.style.left = Math.random() * window.innerWidth + "px";
+    snowflake.style.animationDuration = Math.random() * 3 + 2 + "s"; // Randomize animation duration
+    snowflake.style.opacity = Math.random(); // Randomize opacity
+    document.body.appendChild(snowflake);
+    setTimeout(() => {
+      snowflake.remove();
+    }, 10000); // Remove snowflake after 10 seconds
+  }
+
+  function snowfall() {
+    snowInterval = setInterval(createSnowflake, 100); // Create a snowflake every 100 milliseconds
+    document.body.classList.add('blur');
+    
+  }
+
+  function stopSnowfall() {
+    clearInterval(snowInterval); // Stop snowfall
+    document.body.classList.remove("blur");
+    
+  }
 
 //cloudy effect
 
@@ -163,6 +190,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
+
 //  cloudy
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -180,6 +208,30 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 3000);
   });
 });
+
+// Snowy
+document.addEventListener("DOMContentLoaded", function() {
+  var myElement = document.getElementById("snowy");
+
+  myElement.addEventListener("click", function() {
+      var element = document.getElementById("snowy");
+      element.style.color = "rgb(3, 250, 56)";
+      snowfall(); // 눈 내리도록 호출
+
+      // 3초 후에 눈 내림 효과를 없애기
+      setTimeout(function() {
+          element.style.color = ''; // 텍스트 색상을 원래대로 변경
+          var snowflakes = document.querySelectorAll(".snowflake"); // 모든 눈 효과 선택
+          snowflakes.forEach(function(snowflake) {
+              snowflake.remove(); // 모든 눈 효과 삭제
+          });
+          stopSnowfall(); // 눈효과 중지
+      }, 3000);
+  });
+});
+
+ 
+
 
 //day- clear
 // function changeBackgroundColor3() {

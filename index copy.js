@@ -38,6 +38,11 @@ function createRain(){
 
     }
 
+
+    
+
+
+
 function createClouds(){
     document.body.classList.add('blur');
       setTimeout(function() {
