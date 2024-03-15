@@ -93,20 +93,15 @@
     white-space: pre-line;
   }
 
+
   .images{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-  }
+    text-align: center;
+   }
 
-  .content img{
-    margin-left:2%;
-    width: 80%;
 
-  }
 
-  .description{
-    text-align:center;
-  }
+
+ 
   
 
   
@@ -209,6 +204,23 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
       }
+
+      .images{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .content img{
+        margin-left:2%;
+        width: 80%;
+    
+      }
+
+      .description{
+        text-align:center;
+        font-size: 1rem;
+      }
+    
     
 
   }
@@ -239,5 +251,20 @@
 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  }
+
+
+ 
+
+  .content img{
+    margin-left:1%;
+    width: 99%;
+    margin-top:2%;
+
+  }
+
+  .description{
+    text-align:center;
+    font-size: 0.6rem;
   }
   }
