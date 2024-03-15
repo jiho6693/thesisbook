@@ -80,7 +80,7 @@
   .box {
     
     border: 1px solid #444;
-    padding: 15px;
+    padding: 10px;
     font-size: 150%;
     position: relative;
     margin-bottom: 10px;
@@ -170,33 +170,7 @@
 
 
 
-  @media (max-width:768px) {
-    body {
 
-
-      display: grid;
-    
-        /* filter: blur(1.5px); */
-        margin: 25px;
-        font: 0.65rem Arial, Helvetica, sans-serif;
-        text-decoration: inherit;
-        
-    
-    
-        
-      }
-  
-
-
-  .h{
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 0px;
-
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  }
-  }
 
   @media (min-width:769px) {
 
@@ -237,4 +211,33 @@
       }
     
 
+  }
+
+
+  @media (max-width:768px) {
+    body {
+
+
+      display: grid;
+    
+        /* filter: blur(1.5px); */
+        margin: 14px;
+        font: 0.65rem Arial, Helvetica, sans-serif;
+        text-decoration: inherit;
+        
+    
+    
+        
+      }
+  
+
+
+  .h{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 0px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  }
   }
