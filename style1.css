@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+
 
 
 /* 안개 */
@@ -46,10 +48,14 @@
 
 body {
 
-
+    font-family: "DM Mono", monospace;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 9px;
     /* filter: blur(1.5px); */
+    padding-top:80px;
     margin: 40px;
-    font: 80% Arial, Helvetica, sans-serif;
+    
     
 
 
@@ -59,7 +65,7 @@ body {
   
 
   .wrapper {
-    display: grid;
+    display: flex;
     /* background: no-repeat url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/12005/grid.png); */
     grid-gap: 10px;
     grid-template-columns:  repeat(8, 150px);
