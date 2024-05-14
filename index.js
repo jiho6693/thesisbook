@@ -5,6 +5,81 @@ let lon = "-71.418884";
 const url = 'https://api.openweathermap.org/data/2.5/weather?lat='+ lat + '&lon=' + lon +'&units=imperial&appid='+ apiKey +'';
 
 
+window.onload = function() {
+  const textElement = document.getElementById('changing-text');
+  const texts = [
+    "This space changes according to your weather and time.",
+    "Your space could be night or early dawn",
+    "Also, could also have rain or be cloud",
+    "The digital space is intertwined with reality"
+  ];
+  let index = 0;
+  let intervalId; // setInterval 함수의 반환값을 저장할 변수
+
+  const firstElement = document.getElementById('day');
+  const secondElement = document.getElementById('night');
+  const thirdElement = document.getElementById('dawn');
+  const fourthElement = document.getElementById('rainy');
+  const fifthElement = document.getElementById('cloudy');
+
+  // 인터벌 시작 함수
+  function startInterval() {
+    intervalId = setInterval(() => {
+      textElement.textContent = texts[index];
+      index = (index + 1) % texts.length;
+
+      // 텍스트에 따라 클릭할 요소 변경
+      let clickElement;
+      if (index === 0 || index === 1) {
+        clickElement = firstElement;
+      } else if (index === 2) {
+        // 2번째 텍스트일 때, 두 개의 요소를 차례대로 클릭
+        clickElement = [secondElement, thirdElement];
+      } else if (index === 3) {
+        clickElement = [fourthElement, fifthElement];
+      }
+
+      // 클릭할 요소가 배열이면 순서대로 클릭
+      if (Array.isArray(clickElement)) {
+        clickElement.forEach((element, i) => {
+          setTimeout(() => {
+            if (element) {
+              element.click();
+            } else {
+              console.error(`${i+1}번째 클릭할 요소를 찾을 수 없습니다.`);
+            }
+          }, i * 1000); // 1초 간격으로 클릭
+        });
+      } else {
+        // 클릭할 요소가 정의되어 있다면 바로 클릭
+        if (clickElement) {
+          clickElement.click();
+        } else {
+          console.error("클릭할 요소를 찾을 수 없습니다.");
+        }
+      }
+    }, 2500);
+  }
+
+  // 버튼 클릭 이벤트 처리
+  const playButton = document.getElementById('playbutton');
+  playButton.addEventListener('click', function() {
+    if (intervalId) {
+      // 인터벌이 실행 중인 경우 멈추고 버튼 클래스를 토글
+      clearInterval(intervalId);
+      playButton.classList.add('disabled');
+      intervalId = null;
+    } else {
+      // 인터벌이 실행 중이 아닌 경우 시작하고 버튼 클래스를 토글
+      startInterval();
+      playButton.classList.remove('disabled');
+    }
+  });
+
+  // 페이지 로드 시 인터벌 시작
+  startInterval();
+}
+
 // //reset
 // document.addEventListener("DOMContentLoaded", function() {
 //   var myElement = document.getElementById("myElement0");
@@ -302,7 +377,7 @@ document.addEventListener("DOMContentLoaded", function() {
           var element = document.getElementById("sunrise");
           element.style.color = "rgb(3, 250, 56)";
       } else if (hours >= 7 && hours < 18) {
-          document.body.style.backgroundColor = "white";
+          document.body.style.backgroundColor = "WhiteSmoke";
           var element = document.getElementById("day");
           element.style.color = "rgb(3, 250, 56)";
       } else if (hours >= 18 && hours < 19) {
@@ -387,4 +462,8 @@ fetch(url)
   })
 
  window.addEventListener('load', getWeather);
+
+
+
+
 
