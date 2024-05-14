@@ -43,7 +43,7 @@
     <div class="right_index" >
       <div class="box" ><a href="home.html">Home</a></div>
       <div class="box" ><a href="">Bibliography</a></div>
-      <div class="box"><a href="">Library</a></div>      
+      <div class="box"> <a href="library.html" >library</a></div>      
     </div>  
       
     </div>  
@@ -236,6 +236,8 @@
     </div>
  
 
+ 
+
   </body>
   <script>
     window.onscroll = function() {
@@ -248,5 +250,22 @@
       var scrolled = (winScroll / height) * 100;
       document.getElementById("proBar").style.width = scrolled + "%";
   }
+
+  function showContent(link) {
+        // Get the right side element
+        var rightSide = document.querySelector('.bottom');
+
+        // Clear previous content
+        rightSide.innerHTML = '';
+
+        // Create an iframe to display the webpage
+        var iframe = document.createElement('iframe');
+        iframe.src = link;
+        iframe.width = '100%';
+        iframe.height = '100%';
+
+        // Append the iframe to the right side
+        rightSide.appendChild(iframe);
+    }
   </script>
 </html>

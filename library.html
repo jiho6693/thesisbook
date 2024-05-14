@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="UTF-8">
+    <title>Jiho Park</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style copy.css">
+    <!-- <script type="text/javascript" src="index.js"></script> -->
+  </head>
+  <body>
+    <!-- <div class="header">
+        <div class="box h">
+          <div>Providence</div>
+          <div><span id="clock"></span></div>
+          <div>/</div>
+          <div id="night">Night</div>
+          <div id="dawn">Dawn</div>
+          <div id="sunrise">Sunrise</div>
+          <div id="day">Day</div>
+          <div id="sunset">Sunset</div>
+          <div id="dusk">Dusk</div>
+      
+          <div> /</div>
+          <div id="sunny"> Sunny</div>
+          <div id="cloudy"> Cloudy</div>
+          <div id="rainy"> Rainy</div>
+          <div id="snowy"> Snowy</div>
+        </div>
+    </div>   -->
+    
+    <!-- <div id="changing-text"></div>
+    <div id="playbutton"></div> -->
+
+    <div class="nothing" >
+    </div>
+
+    <div class="index">
+   
+   <!-- <div class="left_index" >
+      <div class="box1"><a href="index.html"><h1>Move or Die</h1></a></div>
+    </div> -->
+    <div class="right_index" >
+      <div class="box" ><a href="home.html">Home</a></div>
+      <!-- <div class="box" ><a href="">Bibliography</a></div> -->
+      <!-- <div class="box"> <a href="#" onclick="showContent('https://jiho6693.github.io/archive/')">library</a> </div>       -->
+    </div>  
+      
+    </div>  
+
+  </div>
+   
+  
+
+
+
+    <div class="bottom">
+    
+      
+    </div>
+
+    
+
+  </body>
+  <script>
+    window.onscroll = function() {
+      pageScroll();
+  };
+  
+  function pageScroll() {
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      document.getElementById("proBar").style.width = scrolled + "%";
+  }
+
+  function showContent(link) {
+        // Get the right side element
+        var rightSide = document.querySelector('.bottom');
+
+        // Clear previous content
+        rightSide.innerHTML = '';
+
+        // Create an iframe to display the webpage
+        var iframe = document.createElement('iframe');
+        iframe.src = link;
+        iframe.width = '100%';
+        iframe.height = '100%';
+
+        // Append the iframe to the right side
+        rightSide.appendChild(iframe);
+    }
+
+    window.addEventListener('load', function () {
+        showContent('https://jiho6693.github.io/archive/'); // Replace this with the default link you want to show
+    });
+  </script>
+</html>
